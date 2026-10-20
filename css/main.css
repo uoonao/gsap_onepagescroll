@@ -1,0 +1,387 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&family=Bungee&display=swap');
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 50%);
+  z-index: 20;
+  transition: 0.3s ease-in;
+}
+.header_in {
+  max-width: 1200px;
+  margin: auto;
+  height: 120px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+h1 img {
+  width: 50px;
+}
+h1 span {
+  font-family: "Baloo Chettan 2", sans-serif;
+  font-size: 40px;
+}
+
+.mob_btn {
+  display: none;
+}
+
+nav {
+
+}
+nav > ul {
+  display: flex;
+  position: relative;
+}
+nav > ul > li {
+  margin: 0 16px;
+}
+nav > ul > li > a {
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+}
+nav > ul > li > a.active {
+  color: rgba(184, 141, 116, 0.678);
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #3b3b3b;
+  bottom: -10px;
+  transition: 0.3s ease-in;
+  z-index: 9999;
+}
+
+
+/* 헤더가 스크롤이 될 때 */
+header.on {
+  background: #55382f;
+  color: #fff;
+}
+header.on .header_in {
+  height: 70px;
+}
+header.on h1 img {
+  width: 30px;
+}
+header.on h1 span {
+  font-size: 28px;
+}
+header.on nav > ul > li {
+  margin: 0 10px;
+}
+header.on nav > ul > li > a {
+  font-size: 16px;
+}
+header.on .mob_btn span {
+  background: #000;
+}
+
+
+
+
+
+
+
+
+section {
+  position: relative;
+  padding: 100px 0 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+#s1 {
+  background: 	rosybrown;
+  height: 100vh;
+}
+#s2 {
+  background:	PowderBlue;
+}
+#s3 {
+  background:	darkseagreen;
+}
+#s4 {
+  background:	Thistle;
+}
+#s5 {
+  background:	PeachPuff;
+}
+#s6 {
+  background:	lightgray;
+  height: 700px;
+}
+
+.container{
+  width: 1100px;
+  display: flex;
+  gap: 30px;
+}
+.container figure img {
+  width: 100%;
+}
+
+h2 {
+  font-family: "Baloo Chettan 2", sans-serif;
+  font-size: clamp(30px, calc(20px + 2vw), 70px);
+  margin-bottom: 0;
+  /* clamp(최소값, 반응형, 최대값) */
+}
+.btnDown {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btnDown i {
+  font-size: 30px;
+  transition: 0.2s ease-in;
+}
+.btnDown:hover i {
+  transform: translateY(20px);
+  color: white;
+}
+
+#s2 .container {
+  align-items: center;
+}
+#s2 .container .txt {
+  flex: 3;
+}
+#s2 .container figure {
+  flex: 2;
+}
+
+#s3 .container {
+  flex-direction: column;
+  align-items: center;
+}
+#s3 .icons ul {
+  display: flex;
+  gap: 50px;
+}
+#s3 .icons li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#s3 i {
+  font-size: 42px;
+}
+#s3 span {
+  color: #535353;
+}
+
+#s4 h2 {
+  line-height: 1.4;
+}
+#s4 .txt {
+  flex: 1;
+  order: 1;
+}
+.cards {
+  flex: 3;
+  display: flex;
+  gap: 20px;
+}
+.card {
+  height: 300px;
+  background: plum;
+  flex: 1;
+  border-radius: 8px;
+}
+
+#s5 .container {
+  align-items: center;
+  color: white;
+}
+#s5 .container > * {
+  flex: 1;
+}
+#s5 .container figure {
+  text-align: center;
+}
+#s5 .container figure img {
+  width: 300px;
+}
+#s5 .btnDown {
+  color: brown;
+}
+
+#s6 .container {
+  justify-content: center;
+}
+#s6 .container p {
+  text-align: center;
+}
+
+/* remote */
+#remote {
+  position: fixed;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+#remote a {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #000;
+  text-indent: -9999px;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+
+#remote a::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: 0.3s ease-out;
+}
+
+#remote a.active {
+  background: rgba(0, 0, 0, 1);
+}
+#remote a.active::after {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+
+
+
+
+
+
+
+
+@media (max-width : 1200px) {
+  section {
+    padding: 70px 20px 100px;
+  }
+  .btnDown {
+    bottom: 40px;
+  }
+}
+
+@media (max-width : 1100px) {
+  .container {
+    width: 100%;
+  }
+  .header_in { width: 100%; height: 70px; }
+  h1 img { width: 40px; }
+  h1 span { font-size: 26px; }
+
+  .mob_btn { position: relative; display: inline-block; width: 30px; height: 20px; cursor: pointer; }
+  .mob_btn span { position: absolute; width: 100%; height: 2px; background: #000; text-indent: -9999px; transition: top 0.3s 0.3s ease-out, transform 0.3s  ease-out; }
+  .mob_btn span:nth-child(1) { top: 0; }
+  .mob_btn span:nth-child(2) { top: 9px; }
+  .mob_btn span:nth-child(3) { top: 18px; }
+
+  .mOpen .header_in {
+    background: #fff;
+    color: #000;
+    border-bottom: 1px solid #ebebeb;
+  }
+  .mOpen .mob_btn span { transition: top 0.3s ease-out, transform 0.3s 0.3s  ease-out; background: #000;   }
+  .mOpen .mob_btn span:nth-child(1) { top: 9px; transform: rotate(135deg); }
+  .mOpen .mob_btn span:nth-child(2) { opacity:0; }
+  .mOpen .mob_btn span:nth-child(3) { top: 9px; transform: rotate(225deg);}
+
+  .mOpen nav { transform: translateY(0); height: calc(100% - 70px);}
+
+  nav { display: block; 
+    position: fixed; top:60px; left: 0; width: 100%; height: 0; overflow: hidden;
+    background: #fff; transition: 0.5s ease-out;
+    z-index: -1;
+  }
+  nav > ul { flex-direction: column; padding-top: 30px; } 
+  nav > ul > li { margin: 0 20px; 
+    border-bottom: 1px solid #ccc
+  }
+  nav > ul > li > a , header.on nav > ul > li > a { 
+    font-size: 24px; line-height: 80px;
+  }
+
+
+
+  .bar, #remote { display: none; }
+}
+
+@media (max-width : 900px) {
+  #s2 .container, #s4 .container, #s5 .container {
+    flex-direction: column;
+  }
+  #s2 .container figure, #s5 .container figure {
+    width: 60%;
+  }
+  .btnDown i {
+    font-size: 25px;
+  }
+  #s4 h2 {
+    margin-bottom: 10px;
+  }
+  #s4 .txt {
+    order: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width : 768px) {
+  section {
+    padding: 70px 20px 70px;
+  }
+  .btnDown {
+    display: none;
+  }
+  #s3 .icons {
+    width: 100%;
+  }
+  #s3 .icons ul {
+    justify-content: space-between;
+    gap: unset;
+  }
+  .card {
+    height: 240px;
+  }
+}
